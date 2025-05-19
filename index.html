@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Исследователь</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="welcome-screen">
+        <h1>Исследователь</h1>
+        <input type="text" id="player-name" placeholder="Введите имя">
+        <button id="start-button" disabled>Старт</button>
+    </div>
+
+    <div id="game-screen" style="display:none;">
+        <div id="info">
+            <p>Имя: <span id="name"></span></p>
+            <p>Время: <span id="time">00:00</span></p>
+            <p>Энергия: <span id="power">50</span>%</p>
+        </div>
+        <canvas id="game-canvas" width="800" height="600"></canvas>
+    </div>
+
+    <div id="result-screen" style="display:none;">
+        <h1>Результат</h1>
+        <p>Имя: <span id="result-name"></span></p>
+        <p>Время: <span id="result-time"></span></p>
+        <p>Очки: <span id="result-score"></span></p> <!- Добавлено отображение очков -->
+        <button id="restart-button">Рестарт</button>
+    </div>
+
+    <div id="game-over-screen" style="display:none;">
+        <h1>Вы проиграли!</h1>
+         <p>Очки: <span id="gameover-score"></span></p>  <!- Добавлено отображение очков -->
+        <button id="restart-button-over">Рестарт</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
