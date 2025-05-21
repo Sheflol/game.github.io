@@ -15,7 +15,6 @@ const restartButtonOver = document.getElementById('restart-button-over');
 const canvas = document.getElementById('game-canvas');
 const ctx = canvas.getContext('2d');
 
-// Добавляем ссылки на новые элементы
 const resultScoreDisplay = document.getElementById('result-score');
 const gameoverScoreDisplay = document.getElementById('gameover-score');
 
@@ -39,10 +38,8 @@ let wallInterval;
 let score = 0;
 
 // Звуки
-const collisionSound = new Audio('audio/бумммммм.wav'); // Звук столкновения (смерти)
-const batterySound = new Audio('audio/пуп.mp3'); // Звук батарейки
-//const backgroundSound = new Audio('audio/background.mp3'); // Фоновый звук - УБРАЛИ
-//backgroundSound.loop = true; // УБРАЛИ
+const collisionSound = new Audio('audio/бумммммм.wav'); 
+const batterySound = new Audio('audio/пуп.mp3'); 
 
 // Изображения
 const backgroundImage = new Image();
@@ -76,7 +73,6 @@ function startGame() {
     score = 0;
     isGameRunning = true;
     showScreen(gameScreen);
-    //backgroundSound.play(); //УБРАЛИ
     startTimer();
     generateWalls();
     gameInterval = requestAnimationFrame(gameLoop);
@@ -87,11 +83,9 @@ function gameOver(isWin) {
     cancelAnimationFrame(gameInterval);
     clearInterval(wallInterval);
     clearInterval(timerInterval);
-    //backgroundSound.pause(); //УБРАЛИ
-    //backgroundSound.currentTime = 0; //УБРАЛИ
 
     // Расчет очков: время * коэффициент
-    score = time * 10; // Пример: каждое время = 10 очков
+    score = time * 10; 
 
     if (isWin) {
          resultTimeDisplay.textContent = timeDisplay.textContent;
@@ -168,7 +162,7 @@ function generateWalls() {
 }
 
 function drawPlayer() {
-    ctx.drawImage(droneImage, 50, playerY - 45, 90, 90); // Увеличенный размер дрона
+    ctx.drawImage(droneImage, 50, playerY - 45, 90, 90); 
 }
 
 function drawWalls() {
@@ -210,8 +204,8 @@ function checkCollisions() {
         const wall = walls[i];
 
         const playerX = 50;
-        const playerWidth = 90; // Учитываем увеличенный размер
-        const playerHeight = 90; // Учитываем увеличенный размер
+        const playerWidth = 90; 
+        const playerHeight = 90; 
 
         if (
             playerX + playerWidth > wall.x &&
@@ -286,10 +280,10 @@ document.addEventListener('keydown', (event) => {
         playerY += 20;
     }
 
-    if (playerY < 45) { // Учтен увеличенный размер дрона
+    if (playerY < 45) {
         playerY = 45;
     }
-    if (playerY > canvas.height - 45) { // Учтен увеличенный размер дрона
+    if (playerY > canvas.height - 45) { 
         playerY = canvas.height - 45;
     }
 });
