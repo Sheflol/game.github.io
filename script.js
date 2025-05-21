@@ -229,7 +229,7 @@ function checkCollisions() {
     for (let i = 0; i < batteries.length; i++) {
         const battery = batteries[i];
         if (
-            50 + 90 > battery.x && //Учитываем размер дрона
+            50 + 90 > battery.x && 
             50 < battery.x + battery.size &&
             playerY > battery.y - battery.size / 2 &&
             playerY < battery.y + battery.size / 2
